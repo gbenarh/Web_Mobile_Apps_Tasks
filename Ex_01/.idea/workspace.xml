@@ -2,14 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="72cf9fea-1da2-46af-93d0-68e8c0430f97" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/myFirstApp/ionic.config.json" beforeDir="false" afterPath="$PROJECT_DIR$/myFirstApp/ionic.config.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/myFirstApp/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/myFirstApp/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/myFirstApp/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/myFirstApp/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/myFirstApp/src/app/app.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/myFirstApp/src/app/app.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/myFirstApp/config.xml" beforeDir="false" afterPath="$PROJECT_DIR$/myFirstApp/config.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/myFirstApp/src/app/app.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/myFirstApp/src/app/app.module.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/myFirstApp/src/pages/home/home.html" beforeDir="false" afterPath="$PROJECT_DIR$/myFirstApp/src/pages/home/home.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/myFirstApp/src/pages/home/home.ts" beforeDir="false" afterPath="$PROJECT_DIR$/myFirstApp/src/pages/home/home.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/myFirstApp/tslint.json" beforeDir="false" afterPath="$PROJECT_DIR$/myFirstApp/tslint.json" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -24,45 +21,51 @@
     <session id="-8264601">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="2" />
-          <entry key="project.open.time.14" value="1" />
+          <entry key="project.closed" value="11" />
+          <entry key="project.open.time.11" value="1" />
+          <entry key="project.open.time.13" value="1" />
+          <entry key="project.open.time.14" value="2" />
+          <entry key="project.open.time.15" value="1" />
           <entry key="project.open.time.4" value="1" />
-          <entry key="project.open.time.7" value="1" />
-          <entry key="project.opened" value="3" />
+          <entry key="project.open.time.7" value="3" />
+          <entry key="project.open.time.8" value="2" />
+          <entry key="project.open.time.9" value="1" />
+          <entry key="project.opened" value="12" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="html" value="1" />
-          <entry key="json" value="1" />
-          <entry key="ts" value="3" />
-          <entry key="xml" value="1" />
+          <entry key="html" value="3" />
+          <entry key="json" value="3" />
+          <entry key="ts" value="7" />
+          <entry key="xml" value="2" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="HTML" value="1" />
-          <entry key="TypeScript" value="3" />
-          <entry key="XML" value="1" />
-          <entry key="tsconfig" value="1" />
+          <entry key="HTML" value="3" />
+          <entry key="JSON" value="1" />
+          <entry key="TypeScript" value="7" />
+          <entry key="XML" value="2" />
+          <entry key="tsconfig" value="2" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="html" value="129" />
-          <entry key="ts" value="166" />
+          <entry key="html" value="140" />
+          <entry key="ts" value="168" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="HTML" value="129" />
-          <entry key="TypeScript" value="166" />
+          <entry key="HTML" value="140" />
+          <entry key="TypeScript" value="168" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.js.language.service.starts">
         <counts>
-          <entry key="TsLintLanguageService" value="3" />
-          <entry key="TypeScriptServerServiceImpl" value="3" />
+          <entry key="TsLintLanguageService" value="11" />
+          <entry key="TypeScriptServerServiceImpl" value="11" />
         </counts>
       </usages-collector>
     </session>
@@ -77,19 +80,34 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/myFirstApp/src/pages/home/home.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="272">
-              <caret line="16" column="39" selection-start-line="16" selection-start-column="39" selection-end-line="16" selection-end-column="39" />
+            <state relative-caret-position="221">
+              <caret line="13" column="22" selection-start-line="13" selection-start-column="22" selection-end-line="13" selection-end-column="22" />
             </state>
           </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/myFirstApp/src/index.html">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/myFirstApp/src/assets/test.json">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/myFirstApp/src/interfaces/pic.ts">
+          <provider selected="true" editor-type-id="text-editor" />
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/myFirstApp/src/pages/home/home.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-447">
-              <caret line="1" column="46" selection-start-line="1" selection-start-column="46" selection-end-line="1" selection-end-column="46" />
+            <state relative-caret-position="459">
+              <caret line="31" column="19" selection-start-line="31" selection-start-column="19" selection-end-line="31" selection-end-column="19" />
               <folding>
-                <element signature="e#0#42#0" expanded="true" />
+                <element signature="e#0#50#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -111,10 +129,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/myFirstApp/src/app/app.component.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state>
+            <state relative-caret-position="68">
+              <caret line="9" column="20" selection-start-line="9" selection-start-column="20" selection-end-line="9" selection-end-column="20" />
               <folding>
                 <element signature="e#0#42#0" expanded="true" />
               </folding>
@@ -130,6 +149,7 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
+        <option value="$PROJECT_DIR$/myFirstApp/src/interfaces/pic.ts" />
         <option value="$PROJECT_DIR$/myFirstApp/src/pages/home/home.ts" />
         <option value="$PROJECT_DIR$/myFirstApp/src/pages/home/home.html" />
       </list>
@@ -153,6 +173,7 @@
   <component name="NodePackageJsonFileManager">
     <packageJsonPaths>
       <path value="$PROJECT_DIR$/myFirstApp/package.json" />
+      <path value="$PROJECT_DIR$/myFirstApp/plugins/com-sarriaroman-photoviewer/package.json" />
       <path value="$PROJECT_DIR$/myFirstApp/plugins/cordova-plugin-device/package.json" />
       <path value="$PROJECT_DIR$/myFirstApp/plugins/cordova-plugin-device/tests/package.json" />
       <path value="$PROJECT_DIR$/myFirstApp/plugins/cordova-plugin-ionic-keyboard/package.json" />
@@ -207,6 +228,20 @@
               <item name="Ex_01" type="462c0819:PsiDirectoryNode" />
               <item name="myFirstApp" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="assets" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Ex_01" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Ex_01" type="462c0819:PsiDirectoryNode" />
+              <item name="myFirstApp" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="interfaces" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Ex_01" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Ex_01" type="462c0819:PsiDirectoryNode" />
+              <item name="myFirstApp" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="pages" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -235,6 +270,7 @@
     <property name="nodejs_interpreter_path" value="node" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+    <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
     <property name="settings.editor.selected.configurable" value="preferences.sourceCode.TypeScript" />
     <property name="ts.external.directory.path" value="D:\IT\Year Two\Web Mobile Apps\Assignments\Web_Mobile_Apps_Tasks\Ex_01\myFirstApp\node_modules\typescript\lib" />
   </component>
@@ -262,12 +298,21 @@
       <updated>1547465733936</updated>
       <workItem from="1547465737609" duration="5497000" />
       <workItem from="1547472568301" duration="130000" />
-      <workItem from="1547472722563" duration="513000" />
+      <workItem from="1547472722563" duration="769000" />
+      <workItem from="1547476145034" duration="545000" />
+      <workItem from="1547481150600" duration="2498000" />
+      <workItem from="1547487467738" duration="848000" />
+      <workItem from="1547497497047" duration="727000" />
+      <workItem from="1547498254100" duration="368000" />
+      <workItem from="1547498970994" duration="482000" />
+      <workItem from="1547534387285" duration="50000" />
+      <workItem from="1547659703812" duration="3343000" />
+      <workItem from="1547666893847" duration="18000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="6140000" />
+    <option name="totallyTimeSpent" value="15275000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -280,9 +325,8 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1096" extended-state="6" />
-    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.2553305" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.2803838" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -291,11 +335,11 @@
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="6" weight="0.32952183" />
+      <window_info active="true" anchor="bottom" id="TODO" order="6" visible="true" weight="0.32952183" />
       <window_info anchor="bottom" id="Version Control" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Docker" order="8" show_stripe_button="false" />
       <window_info anchor="bottom" id="TypeScript" order="9" weight="0.32952183" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="10" visible="true" weight="0.4989605" />
+      <window_info anchor="bottom" id="Terminal" order="10" weight="0.44386694" />
       <window_info anchor="bottom" id="Event Log" order="11" side_tool="true" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -313,25 +357,31 @@
     <entry file="file://$PROJECT_DIR$/myFirstApp/config.xml">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/myFirstApp/tsconfig.json">
+    <entry file="file://$PROJECT_DIR$/myFirstApp/src/pages/home/home.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="13" column="22" selection-start-line="13" selection-start-column="22" selection-end-line="13" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/myFirstApp/src/assets/test.json">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/myFirstApp/src/interfaces/pic.ts">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/myFirstApp/src/pages/home/home.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-447">
-          <caret line="1" column="46" selection-start-line="1" selection-start-column="46" selection-end-line="1" selection-end-column="46" />
+        <state relative-caret-position="459">
+          <caret line="31" column="19" selection-start-line="31" selection-start-column="19" selection-end-line="31" selection-end-column="19" />
           <folding>
-            <element signature="e#0#42#0" expanded="true" />
+            <element signature="e#0#50#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/myFirstApp/src/pages/home/home.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="16" column="39" selection-start-line="16" selection-start-column="39" selection-end-line="16" selection-end-column="39" />
-        </state>
-      </provider>
+    <entry file="file://$PROJECT_DIR$/myFirstApp/tsconfig.json">
+      <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/myFirstApp/src/app/app.module.ts">
       <provider selected="true" editor-type-id="text-editor">
@@ -344,12 +394,16 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/myFirstApp/src/app/app.component.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state>
+        <state relative-caret-position="68">
+          <caret line="9" column="20" selection-start-line="9" selection-start-column="20" selection-end-line="9" selection-end-column="20" />
           <folding>
             <element signature="e#0#42#0" expanded="true" />
           </folding>
         </state>
       </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/myFirstApp/src/index.html">
+      <provider selected="true" editor-type-id="text-editor" />
     </entry>
   </component>
 </project>
