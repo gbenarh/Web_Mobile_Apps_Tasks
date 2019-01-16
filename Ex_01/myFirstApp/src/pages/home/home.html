@@ -8,13 +8,13 @@
 
 <ion-content padding>
   <ion-list>
-    <ion-item *ngFor="let image of picArray">
+    <ion-item *ngfor="let image of picArray">
       <ion-thumbnail item-start>
-        <img [src]="image.thumbnail">
+        <img [src]="url+pic.filename">
       </ion-thumbnail>
-      <h2>{{image.title}}</h2>
-      <p>{{image.details}}</p>
-      <button ion-button clear item-end>View</button>
+      <h2>{{pic.title}}</h2>
+      <p>{{pic.description}}</p>
+      <button ion-button clear item-end (click)="fullscreenImage(pic.filename)">View</button>
     </ion-item>
   </ion-list>
 </ion-content>
