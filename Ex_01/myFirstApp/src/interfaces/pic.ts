@@ -1,5 +1,5 @@
 export interface Pic {
+    filename: string;
     title: string;
-    details: string;
-    thumbnail: string;
+    description: string;
 }

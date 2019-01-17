@@ -9,6 +9,7 @@ import { HttpClient } from '@angular/common/http';
 })
 export class HomePage implements OnInit{
   picArray: Pic[] = [];
+  url = 'https://media.mw.metropolia.fi/wbma/uploads/';
 
   constructor(public navCtrl: NavController, public http: HttpClient) {
 
@@ -19,9 +20,9 @@ export class HomePage implements OnInit{
   }
 
   loadPic() {
-    this.http.get('../../assets/test.json').subscribe((result: Pic[]) => {
-      this.picArray = result;
-      console.log(this.picArray);
+    this.http.get<Pic[]>('https://media.mw.metropolia.fi/wbma/media').subscribe((result: Pic[]) => {
+    this.picArray = result;
+    console.log(this.picArray);
     });
   }
 
