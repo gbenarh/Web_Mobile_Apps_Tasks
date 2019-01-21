@@ -24,6 +24,7 @@ export class HomePage implements OnInit {
   getAllFiles() {
     this.mediaProvider.getAllMedia().subscribe((data: Pic[]) => {
       console.log('data', data);
+      // A:
       /*
       this.picArray = data.map((pic: Pic) => {
         const filename = pic.filename.split('.')[0];
@@ -35,6 +36,7 @@ export class HomePage implements OnInit {
         return pic;
       });
       */
+     // B:
       data.forEach((pic: Pic) => {
         // add files to picArray
         this.mediaProvider.getSingleMedia(pic.file_id).subscribe((file: Pic) => {
