@@ -12,6 +12,7 @@ import { LogoutPage } from '../pages/logout/logout';
 import { LoginRegisterPage } from '../pages/login-register/login-register';
 import { MenuPage } from '../pages/menu/menu';
 import { PhotoViewer } from '@ionic-native/photo-viewer';
+import { PipesModule } from '../pipes/pipes.module';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { PhotoViewer } from '@ionic-native/photo-viewer';
   imports: [
     BrowserModule,
     IonicModule.forRoot(MyApp),
-    HttpClientModule
+    HttpClientModule,
+    PipesModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [

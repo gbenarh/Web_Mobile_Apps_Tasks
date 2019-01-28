@@ -4,6 +4,7 @@ import { Pic } from '../../interfaces/pic';
 import { HttpClient } from '@angular/common/http';
 import { PhotoViewer } from '@ionic-native/photo-viewer';
 import { MediaProvider } from '../../providers/media/media';
+import { Observable } from 'rxjs/Observable';
 
 @Component({
   selector: 'page-home',
@@ -11,6 +12,7 @@ import { MediaProvider } from '../../providers/media/media';
 })
 export class HomePage implements OnInit {
   picArray: Pic[] = [];
+  mediaArray: Observable<Pic[]>;
 
 
   constructor(public navCtrl: NavController, private photoViewer: PhotoViewer, public http: HttpClient, private mediaProvider: MediaProvider) {
@@ -21,6 +23,7 @@ export class HomePage implements OnInit {
     this.getAllFiles();
   }
 
+  /*
   getAllFiles() {
     this.mediaProvider.getAllMedia().subscribe((data: Pic[]) => {
       console.log('data', data);
@@ -35,7 +38,6 @@ export class HomePage implements OnInit {
         };
         return pic;
       });
-      */
      // B:
       data.forEach((pic: Pic) => {
         // add files to picArray
@@ -45,6 +47,12 @@ export class HomePage implements OnInit {
       });
     });
   }
+*/
+
+  getAllFiles() {
+  this.mediaArray = this.mediaProvider.getAllMedia();
+  console.log(this.mediaArray);
+}
 
   showImage(image) {
     this.photoViewer.show(image);
