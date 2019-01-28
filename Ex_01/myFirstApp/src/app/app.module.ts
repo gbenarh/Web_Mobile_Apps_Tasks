@@ -3,17 +3,23 @@ import { ErrorHandler, NgModule } from '@angular/core';
 import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { StatusBar } from '@ionic-native/status-bar';
+import { HttpClientModule } from '@angular/common/http';
 
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
-import { HttpClientModule } from '@angular/common/http';
-import { PhotoViewer } from '@ionic-native/photo-viewer';
 import { MediaProvider } from '../providers/media/media';
+import { LogoutPage } from '../pages/logout/logout';
+import { LoginRegisterPage } from '../pages/login-register/login-register';
+import { MenuPage } from '../pages/menu/menu';
+import { PhotoViewer } from '@ionic-native/photo-viewer';
 
 @NgModule({
   declarations: [
     MyApp,
-    HomePage
+    HomePage,
+    LogoutPage,
+    LoginRegisterPage,
+    MenuPage
   ],
   imports: [
     BrowserModule,
@@ -23,7 +29,10 @@ import { MediaProvider } from '../providers/media/media';
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
-    HomePage
+    HomePage,
+    LogoutPage,
+    LoginRegisterPage,
+    MenuPage
   ],
   providers: [
     StatusBar,
