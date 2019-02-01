@@ -32,3 +32,13 @@ export interface LoginResponse {
     token: string;
     user: User;
 }
+
+export interface CheckResponse {
+  result?: object;
+  username: string;
+  available: `boolean`;
+}
+
+export interface CheckUsername {
+  message: string;
+}

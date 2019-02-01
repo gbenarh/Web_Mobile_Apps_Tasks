@@ -14,30 +14,55 @@
 
 <ion-content padding>
   <!--TODO: add FORMS for login and registration-->
-  <form (ngSubmit)="login()">
-      <ion-item>
-          <ion-label color="primary" floating>Username</ion-label>
-          <ion-input type="text" [(ngModel)]="user.username" name="username"></ion-input>
-        </ion-item>
-        <ion-item>
-          <ion-label color="primary" floating>Password</ion-label>
-          <ion-input type="Password" [(ngModel)]="user.password" name="password"></ion-input>
-        </ion-item>
-        <button ion-button block color="secondary" type="submit">Login</button>
+  <form  *ngIf="!showRegister" (ngSubmit)="login()">
+    <ion-item>
+      <ion-label floating>Username</ion-label>
+      <ion-input type="text" [(ngModel)]="user.username" name="username"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label floating>Password</ion-label>
+      <ion-input type="Password" [(ngModel)]="user.password" name="password"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <button ion-button block type="submit">Login</button>
+    </ion-item>
   </form>
-<form (ngSubmit)="register()">
+
+  <form *ngIf="showRegister" (ngSubmit)="submitReg()">
       <ion-item>
-          <ion-label color="primary" floating>Username</ion-label>
-          <ion-input type="text" [(ngModel)]="user.username" name="username"></ion-input>
-        </ion-item>
-        <ion-item>
-          <ion-label color="primary" floating>Password</ion-label>
-          <ion-input type="Password" [(ngModel)]="user.password" name="password"></ion-input>
-        </ion-item>
-        <ion-item>
-            <ion-label color="primary" floating>email</ion-label>
-            <ion-input type="email" name="email"></ion-input>
-          </ion-item>
-        <button ion-button block color="secondary" type="submit">Register</button>
-  </form>
+        <ion-label floating>Username</ion-label>
+        <ion-input #username (ionBlur)="checkUser()" type="text" [(ngModel)]="user.username" name="username"></ion-input>
+      </ion-item>
+
+      <ion-item>
+          <ion-label floating>E-Mail</ion-label>
+          <ion-input type="text" [(ngModel)]="user.email" name="email"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label floating>Full name (optional)</ion-label>
+        <ion-input type="text" [(ngModel)]="user.full_name" name="fullname"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label floating>Password</ion-label>
+        <ion-input type="Password" [(ngModel)]="user.password" name="password"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label floating>Confirm Password</ion-label>
+        <ion-input type="Password" [(ngModel)]="confirmPassword" name="ConfirmPassword"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <button ion-button block type="submit">Register</button>
+      </ion-item>
+    </form>
+
+    <ion-item>
+      <button ion-button block primary *ngIf="!showRegister" (click)="swapButton()">Not a user? Register</button>
+      <button ion-button block primary *ngIf="showRegister" (click)="swapButton()">Already a user? Login</button>
+    </ion-item>
 </ion-content>
