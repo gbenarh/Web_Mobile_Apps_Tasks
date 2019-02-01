@@ -10,12 +10,12 @@
   <ion-list>
     <ion-item *ngFor="let image of mediaArray | async">
       <ion-thumbnail item-start>
-        <img [src]="'https://media.mw.metropolia.fi/wbma/uploads/' + (image.file_id | thumbnail: 'small' | async)" [alt]="image.title">
+        <img [src]="mediaProvider.mediaFilePath + (image.file_id | thumbnail: 'small' | async)" [alt]="image.title">
       </ion-thumbnail>
       <h2>{{image.title}}</h2>
       <p>{{image.time_added | date: ('d.M.yyyy')}}</p>
       <p>{{image.description}}</p>
-      <button ion-button clear item-end (click)="showImage('https://media.mw.metropolia.fi/wbma/uploads/' + image.filename)">View</button>
+      <button ion-button clear item-end (click)="showImage(image.file_id)">View</button>
     </ion-item>
   </ion-list>
 </ion-content>

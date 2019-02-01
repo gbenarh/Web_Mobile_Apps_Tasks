@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { HomePage } from '../home/home';
 import { LoginRegisterPage } from '../login-register/login-register';
-import { LogoutPage } from '../logout/logout';
+import { ProfilePage } from '../profile/profile';
 import { MediaProvider } from '../../providers/media/media';
 
 
@@ -14,10 +14,16 @@ import { MediaProvider } from '../../providers/media/media';
 })
 export class MenuPage {
 
-  constructor(public mediaProvider: MediaProvider) {
+  constructor(
+    public mediaProvider: MediaProvider,
+    public navCtrl: NavController, public navParams: NavParams) {
 
-}
+  }
+  ionViewDidLoad() {
+    console.log(this.mediaProvider.loggedIn);
+  }
+
   homeRoot = HomePage;
   loginRoot = LoginRegisterPage;
-  logoutRoot = LogoutPage;
+  profileRoot = ProfilePage;
 }

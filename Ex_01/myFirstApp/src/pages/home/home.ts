@@ -11,7 +11,6 @@ import { Observable } from 'rxjs/Observable';
   templateUrl: 'home.html'
 })
 export class HomePage implements OnInit {
-  picArray: Pic[] = [];
   mediaArray: Observable<Pic[]>;
 
 
@@ -54,8 +53,14 @@ export class HomePage implements OnInit {
   console.log(this.mediaArray);
 }
 
-  showImage(image) {
-    this.photoViewer.show(image);
+  showImage(fileId: number) {
+    // this.photoViewer.show(image);
+    this.mediaProvider.getSingleMedia(fileId).subscribe(result => {
+        console.log(result);
+      }, error => {
+        console.log(error);
+      },
+    );
   }
 
 

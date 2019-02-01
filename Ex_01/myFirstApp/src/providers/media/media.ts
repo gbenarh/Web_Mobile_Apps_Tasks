@@ -9,9 +9,11 @@ import { LoginResponse, Pic, User } from '../../interfaces/pic';
 @Injectable()
 export class MediaProvider {
   configUrl = 'https://media.mw.metropolia.fi/wbma';
+  mediaFilePath = 'http://media.mw.metropolia.fi/wbma/uploads/';
   picArray: Pic[];
 
   loggedIn = false;
+  user: User = null;
 
   constructor(public http: HttpClient) {
 
@@ -20,9 +22,11 @@ export class MediaProvider {
   getAllMedia() {
     return this.http.get<Pic[]>(this.configUrl + '/media');
   }
+
   getSingleMedia(id) {
     return this.http.get<Pic>(this.configUrl + '/media/' + id);
   }
+
   login(user: User) {
     const httpOptions = {
       headers: new HttpHeaders({
@@ -39,7 +43,15 @@ export class MediaProvider {
     };
     return this.http.post<LoginResponse>(this.configUrl + '/users', user, httpOptions);
   }
+
   checkIfUserExists(user: User) {
       return this.http.get(this.configUrl + '/users/username/' + user.username);
   }
+
+  getFilesByTag(tag: string) {
+    // single file
+    return this.http.get<Pic[]>(this.configUrl + '/tags/' + tag);
+  }
+
+
 }

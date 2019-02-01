@@ -25,7 +25,7 @@ export interface User {
   password?: string;
   email?: string;
   full_name?: string;
-  data_created?: Date;
+  time_created?: Date;
 }
 export interface LoginResponse {
     message: string;

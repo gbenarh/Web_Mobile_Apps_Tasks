@@ -1,5 +1,6 @@
 <ion-tabs>
-  <ion-tab [root]="loginRoot" tabTitle="Login" tabIcon="log-in"></ion-tab>
-<!--<ion-tab hidden [root]="homeRoot" tabTitle="Menu" tabIcon="information-circle"></ion-tab>-->
-<ion-tab [root]="logoutRoot" tabTitle="Logout" tabIcon="log-out"></ion-tab>
+  <ion-tab [root]="homeRoot" tabIcon="home" tabTitle="Home"></ion-tab>
+  <ion-tab [show]="!mediaProvider.loggedIn" [root]="loginRoot" tabIcon="log-in" tabTitle="Login/Register"></ion-tab>
+  <ion-tab [show]="mediaProvider.loggedIn" [root]="profileRoot" tabIcon="person" tabTitle="Profile"></ion-tab>
+
 </ion-tabs>
