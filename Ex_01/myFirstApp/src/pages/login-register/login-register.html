@@ -37,13 +37,13 @@
       </ion-item>
 
       <ion-item>
-          <ion-label floating>E-Mail</ion-label>
-          <ion-input type="text" [(ngModel)]="user.email" name="email"></ion-input>
+          <ion-label floating>Email</ion-label>
+          <ion-input #email (ionBlur)="checkEmail()" type="text" [(ngModel)]="user.email" name="email"></ion-input>
       </ion-item>
 
       <ion-item>
         <ion-label floating>Full name (optional)</ion-label>
-        <ion-input type="text" [(ngModel)]="user.full_name" name="fullname"></ion-input>
+        <ion-input #fullname (ionBlur)="checkFullname()" type="text" [(ngModel)]="user.full_name" name="fullname"></ion-input>
       </ion-item>
 
       <ion-item>
@@ -53,7 +53,7 @@
 
       <ion-item>
         <ion-label floating>Confirm Password</ion-label>
-        <ion-input type="Password" [(ngModel)]="confirmPassword" name="ConfirmPassword"></ion-input>
+        <ion-input (ionBlur)="checkPassword()" type="Password" [(ngModel)]="confirmPassword" name="ConfirmPassword"></ion-input>
       </ion-item>
 
       <ion-item>

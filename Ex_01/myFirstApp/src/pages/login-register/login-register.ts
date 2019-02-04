@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ViewChild  } from '@angular/core';
 import { AlertController, IonicPage, NavController, NavParams } from 'ionic-angular';
 import { HttpClient } from '@angular/common/http';
 import { MediaProvider } from '../../providers/media/media';
@@ -13,12 +13,17 @@ import { CheckUsername } from './../../interfaces/pic';
 
 })
 export class LoginRegisterPage {
+  @ViewChild('username') usernameValue;
+  @ViewChild('email') emailValue;
+  @ViewChild('fullname') fullnameValue;
 
-  user: User = { username: '', full_name: '' };
+
+  user: User = { username: null, full_name: null, email: null, password: null };
   showRegister = false;
   confirmUser = '';
   confirmPassword: string;
   regFormOk = false;
+  userAlert = false;
 
   constructor(
               public alertCtrl: AlertController, public navCtrl: NavController,
@@ -88,100 +93,92 @@ export class LoginRegisterPage {
     this.checkEmail();
     this.checkFullname();
     if (this.user.username === '' || this.user.password === '') {
-      const alert = this.alertCtrl.create({
-        title: 'Warning',
-        subTitle: 'Missing password or username.',
-        buttons: ['Dismiss']
-      });
-      alert.present();
+      this.userAlert = true;
+      this.showAlert('Missing password or username.');
     } else {
       this.checkPassword();
     }
   }
 
   checkPassword() {
-    if (this.user.password.length < 8) {
-      const alert = this.alertCtrl.create({
-        title: 'Warning',
-        subTitle: 'Password must be atleast 8 characters long.',
-        buttons: ['Dismiss']
-      });
-      alert.present();
+    if (this.user.password !== null && this.user.password.length < 8) {
+      this.userAlert = true;
+      this.showAlert('Password must be atleast 8 characters long.');
     } else {
-      if (this.user.password === this.confirmPassword) {
+      if (this.confirmPassword !== '' && (this.user.password === this.confirmPassword)) {
         if (this.regFormOk) {
           this.register();
         }
       } else {
-        const alert = this.alertCtrl.create({
-          title: 'Warning',
-          subTitle: 'Passwords do not match.',
-          buttons: ['Dismiss']
-        });
-        alert.present();
+        if (this.user.password !== null && this.confirmPassword !== null) {
+          this.userAlert = true;
+          this.showAlert('Passwords do not match.');
+        }
       }
     }
   }
 
   checkUser() {
-    this.mediaprovider.checkIfUserExists(this.user).subscribe(
-      (response: CheckResponse) => {
-        console.log(response);
-        if (this.user.username.length >= 3) {
-          if (!response.available) {
-            const alert = this.alertCtrl.create({
-              title: 'Warning',
-              subTitle: 'Username already taken.',
-              buttons: ['Dismiss']
-            });
-            alert.present();
-            this.user.username = '';
-          }
-        } else {
-          const alert = this.alertCtrl.create({
-            title: 'Warning',
-            subTitle: 'Username must be atleast 4 characters long.',
-            buttons: ['Dismiss']
-          });
-          alert.present();
-          this.user.username = '';
+    if (this.user.username !== null) {
+      console.log('user ni: ', this.user.username);
+      this.mediaprovider.checkIfUserExists(this.user).subscribe(
+        (response: CheckResponse) => {
+          console.log(response);
+          if (this.user.username.length >= 3) {
+            if (!response.available) {
+              this.userAlert = true;
+              this.usernameValue = true;
+              this.showAlert('Username already exists');
+              this.user.username = '';
+              } else {
+                this.userAlert = false;
+              }
+            } else {
+                console.log(Error);
+              }
         }
-      },
-      error => {
-        console.log(error);
-      });
+      );
+    }
   }
 
   checkEmail() {
-    const mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
-    if (!this.user.email.match(mailformat)) {
-      const alert = this.alertCtrl.create({
-        title: 'Warning',
-        subTitle: 'You have entered an invalid email address.',
-        buttons: ['Dismiss']
-      });
-      alert.present();
-      this.user.email = '';
+    if (this.user.email !== null) {
+      const mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+      if (!this.user.email.match(mailformat)) {
+        this.userAlert = true;
+        this.emailValue = true;
+        this.showAlert('You have entered an invalid email address.');
+        this.user.email = '';
+      } else {
+        // console.log(Error);
+      }
     }
   }
 
 
   checkFullname() {
-    const nameformat = /^[a-zA-Z ]+$/;
-    if (this.user.full_name !== '' && !this.user.full_name.match(nameformat)) {
-      const alert = this.alertCtrl.create({
-        title: 'Warning',
-        subTitle: 'Your full name contains non alphabetic characters.',
-        buttons: ['Dismiss']
-      });
-
-      alert.present();
-    } else {
-      this.regFormOk = true;
-      this.user.full_name = '';
+    if (this.user.full_name !== null) {
+      const nameformat = /^[a-zA-Z ]+$/;
+      if (this.user.full_name !== '' && !this.user.full_name.match(nameformat)) {
+        this.userAlert = true;
+        this.fullnameValue = true;
+        this.showAlert('Your full name contains non alphabetic characters.');
+        this.user.full_name = '';
+      } else {
+        this.regFormOk = true;
+        this.user.full_name = '';
+      }
     }
   }
 
+  showAlert(message) {
+    const alert = this.alertCtrl.create({
+      title: 'Error!',
+      subTitle: message,
+      buttons: ['ok'],
+    });
+    alert.present().catch();
+  }
 
 
 }
