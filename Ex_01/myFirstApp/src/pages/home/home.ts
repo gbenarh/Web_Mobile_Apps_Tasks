@@ -5,20 +5,20 @@ import { HttpClient } from '@angular/common/http';
 import { PhotoViewer } from '@ionic-native/photo-viewer';
 import { MediaProvider } from '../../providers/media/media';
 import { Observable } from 'rxjs/Observable';
+import { UploadPage } from '../upload/upload';
 
 @Component({
   selector: 'page-home',
   templateUrl: 'home.html'
 })
-export class HomePage implements OnInit {
+export class HomePage {
   mediaArray: Observable<Pic[]>;
-
 
   constructor(public navCtrl: NavController, private photoViewer: PhotoViewer, public http: HttpClient, private mediaProvider: MediaProvider) {
 
   }
 
-  ngOnInit() {
+  ionViewDidEnter() {
     this.getAllFiles();
   }
 
@@ -62,6 +62,11 @@ export class HomePage implements OnInit {
       },
     );
   }
+
+  upload() {
+    this.navCtrl.push(UploadPage);
+  }
+
 
 
 }

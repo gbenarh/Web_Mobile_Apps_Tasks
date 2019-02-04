@@ -53,5 +53,14 @@ export class MediaProvider {
     return this.http.get<Pic[]>(this.configUrl + '/tags/' + tag);
   }
 
+  upload(data: any) {
+    const httpOptions = {
+      headers: new HttpHeaders({
+        'x-access-token': localStorage.getItem('token'),
+      })
+    };
+    return this.http.post<LoginResponse>(this.configUrl + '/media', data, httpOptions);
+  }
+
 
 }

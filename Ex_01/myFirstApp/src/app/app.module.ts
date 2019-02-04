@@ -13,6 +13,7 @@ import { LoginRegisterPage } from '../pages/login-register/login-register';
 import { MenuPage } from '../pages/menu/menu';
 import { PhotoViewer } from '@ionic-native/photo-viewer';
 import { PipesModule } from '../pipes/pipes.module';
+import { UploadPage } from '../pages/upload/upload';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { PipesModule } from '../pipes/pipes.module';
     HomePage,
     ProfilePage,
     LoginRegisterPage,
-    MenuPage
+    MenuPage,
+    UploadPage
   ],
   imports: [
     BrowserModule,
@@ -34,14 +36,16 @@ import { PipesModule } from '../pipes/pipes.module';
     HomePage,
     ProfilePage,
     LoginRegisterPage,
-    MenuPage
+    MenuPage,
+    UploadPage
   ],
   providers: [
     StatusBar,
     SplashScreen,
     { provide: ErrorHandler, useClass: IonicErrorHandler },
     PhotoViewer,
-    MediaProvider
+    MediaProvider,
+    PipesModule
   ]
 })
 export class AppModule {}

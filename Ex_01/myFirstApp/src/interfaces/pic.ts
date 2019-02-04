@@ -42,3 +42,9 @@ export interface CheckResponse {
 export interface CheckUsername {
   message: string;
 }
+
+export interface UploadForm {
+  file?: File;
+  description?: string;
+  title?: string;
+}
