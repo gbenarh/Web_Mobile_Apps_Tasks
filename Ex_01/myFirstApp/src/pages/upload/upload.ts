@@ -1,10 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, LoadingController, NavController, NavParams } from 'ionic-angular';
 
-import { Observable, ReplaySubject, Subject } from 'rxjs';
-import { filter, map, switchMap } from 'rxjs/operators';
-import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { Pic, UploadForm } from '../../interfaces/pic';
+import { UploadForm } from '../../interfaces/pic';
 import { MediaProvider } from '../../providers/media/media';
 
 
@@ -21,13 +18,17 @@ import { MediaProvider } from '../../providers/media/media';
   templateUrl: 'upload.html',
 })
 export class UploadPage {
-  picture: any;
-  uploadForm: UploadForm = {};
-  fileData = '';
+  filedata = '';
   file: File;
   title = '';
   description = '';
   formData = new FormData();
+  filters = {
+    brightness: 100,
+    contrast: 100,
+    warmth: 0,
+    saturation: 100,
+  };
 
   constructor(
     public loadingCtrl: LoadingController, private mediaProvider: MediaProvider,
@@ -39,14 +40,11 @@ export class UploadPage {
   }
 
   handleChange($event) {
-    console.log($event.target.files[0]);
+    // console.log($event.target.files);
+    // get the file from $event
     this.file = $event.target.files[0];
-
+    // call showPreview
     this.showPreview();
-
-    // this.formData.append("file", this.fileData);
-    // this.formData.append("title", this.picture.title);
-    // this.formData.append("description", this.picture.description);
   }
 
   showPreview() {
@@ -54,23 +52,27 @@ export class UploadPage {
     reader.onloadend = (evt) => {
       // using arrow fuction to change the reference, if not ==> error of this.
       // console.log(reader.result)
-      this.fileData = reader.result;
+      this.filedata = reader.result;
     };
+
     if (this.file.type.includes('video')) {
-      this.fileData = 'http://via.placeholder.com/500x200/00?text=Video';
+      this.filedata = 'http://via.placeholder.com/500x200/00?text=Video';
     } else if (this.file.type.includes('audio')) {
-      this.fileData = 'http://via.placeholder.com/500x200/00?text=Audio';
+      this.filedata = 'http://via.placeholder.com/500x200/00?text=Audio';
     } else {
-    reader.readAsDataURL(this.file);
+      reader.readAsDataURL(this.file);
     }
   }
 
   upload() {
+    const description = `[d]${this.description}[/d]`;
+    const filters = `[f]${JSON.stringify(this.filters)}[/f]`;
     // show spinner
+    this.Loading();
     const fd = new FormData();
     fd.append('file', this.file);
     fd.append('title', this.title);
-    fd.append('description', this.description);
+    fd.append('description', description + filters);
     this.mediaProvider.upload(fd).subscribe(res => {
       // set time out in 2s
       console.log(res);
@@ -83,11 +85,11 @@ export class UploadPage {
     const loading = this.loadingCtrl.create({
       content: 'Please wait...'
     });
-    loading.present();
+    loading.present().catch();
 
     setTimeout(() => {
       this.navCtrl.pop().catch();
-      loading.dismiss();
+      loading.dismiss().catch();
     }, 3000);
   }
 

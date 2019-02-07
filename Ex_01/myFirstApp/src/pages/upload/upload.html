@@ -30,14 +30,41 @@
     </ion-item>
     <ion-item>
       <ion-label>Choose media file</ion-label>
-      <ion-input type="file" (change)="handleChange($event)"></ion-input>
+      <ion-input type="file" accept="image/*, video/*, audio/*" (change)="handleChange($event)"></ion-input>
     </ion-item>
     <ion-buttons>
       <button type="submit" ion-button block>Upload</button>
     </ion-buttons>
   </form>
 
-  <ion-card>
-    <img #preview [src]="fileData">
+  <ion-card *ngIf="file">
+    <img #preview [src]="filedata"
+         [ngStyle]="{'filter': 'brightness('+filters.brightness/100+') contrast('+filters.contrast/100+') saturate('+filters.saturation/100+') sepia('+filters.warmth/100+')'}">
+    <div *ngIf="file.type.includes('image')">
+      <ion-item>
+        <ion-range min="0" max="200" step="1" [(ngModel)]="filters.brightness">
+          <ion-icon small range-left name="sunny"></ion-icon>
+          <ion-icon range-right name="sunny"></ion-icon>
+        </ion-range>
+      </ion-item>
+      <ion-item>
+        <ion-range min="0" max="200" step="1" [(ngModel)]="filters.contrast">
+          <ion-icon small range-left name="contrast"></ion-icon>
+          <ion-icon range-right name="contrast"></ion-icon>
+        </ion-range>
+      </ion-item>
+      <ion-item>
+        <ion-range min="0" max="200" step="1" [(ngModel)]="filters.saturation">
+          <ion-icon small range-left name="water"></ion-icon>
+          <ion-icon range-right name="water"></ion-icon>
+        </ion-range>
+      </ion-item>
+      <ion-item>
+        <ion-range min="0" max="100" step="1" [(ngModel)]="filters.warmth">
+          <ion-icon small range-left name="thermometer"></ion-icon>
+          <ion-icon range-right name="thermometer"></ion-icon>
+        </ion-range>
+      </ion-item>
+    </div>
   </ion-card>
 </ion-content>
