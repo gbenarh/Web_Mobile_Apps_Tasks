@@ -14,6 +14,7 @@ import { MenuPage } from '../pages/menu/menu';
 import { PhotoViewer } from '@ionic-native/photo-viewer';
 import { PipesModule } from '../pipes/pipes.module';
 import { UploadPage } from '../pages/upload/upload';
+import { Chooser } from '@ionic-native/chooser';
 
 @NgModule({
   declarations: [
@@ -45,7 +46,8 @@ import { UploadPage } from '../pages/upload/upload';
     { provide: ErrorHandler, useClass: IonicErrorHandler },
     PhotoViewer,
     MediaProvider,
-    PipesModule
+    PipesModule,
+    Chooser
   ]
 })
 export class AppModule {}
