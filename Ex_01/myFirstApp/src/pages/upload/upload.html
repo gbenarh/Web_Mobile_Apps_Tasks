@@ -14,26 +14,33 @@
 
 
 <ion-content padding>
-  <form (ngSubmit)="upload()">
+  <form #uForm="ngForm" (ngSubmit)="upload()">
+
     <ion-item no-lines>
       <ion-label>
         Upload Media
       </ion-label>
     </ion-item>
+
     <ion-item>
       <ion-label color="primary" stacked>Title</ion-label>
-      <ion-input name="title" placeholder="title input" [(ngModel)]="title"></ion-input>
+      <ion-input name="title" placeholder="title input" [(ngModel)]="title" required minlength="3"></ion-input>
     </ion-item>
+
     <ion-item>
       <ion-label color="primary" stacked>Description</ion-label>
-      <ion-textarea type="text" name="description" placeholder="description input" [(ngModel)]="description"></ion-textarea>
+      <ion-textarea type="text" name="description" placeholder="description input" [(ngModel)]="description" minlength="4"></ion-textarea>
     </ion-item>
+
     <ion-item>
-      <button ion-button type="button" (click)="choose()">Choose file</button>
+      <button ion-button type="button" (click)="Choose()">Choose file</button>
     </ion-item>
+
     <ion-buttons>
-      <button type="submit" ion-button block>Upload</button>
+      <button type="submit" ion-button [disabled]="uForm.invalid">Upload</button>
+      <button ion-button type="button" (click)="Clear()">Clear form</button>
     </ion-buttons>
+
   </form>
 
   <ion-card *ngIf="file">

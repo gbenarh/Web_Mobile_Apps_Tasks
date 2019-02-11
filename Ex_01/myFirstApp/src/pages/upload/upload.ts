@@ -1,8 +1,9 @@
-import { Component } from '@angular/core';
+import { Component, ViewChild } from '@angular/core';
 import { IonicPage, LoadingController, NavController, NavParams } from 'ionic-angular';
 
 import { Chooser } from '@ionic-native/chooser';
 import { MediaProvider } from '../../providers/media/media';
+import { NgForm } from '@angular/forms';
 
 
 /**
@@ -18,6 +19,7 @@ import { MediaProvider } from '../../providers/media/media';
   templateUrl: 'upload.html',
 })
 export class UploadPage {
+  @ViewChild('uForm') uForm: NgForm;
 
   blob: any;
   file: File;
@@ -82,13 +84,31 @@ export class UploadPage {
     });
   }
 
-  choose() {
+  Choose() {
     this.chooser.getFile('image/*, video/*, audio/*').then(file => {
+      if (!file) return;
+      else {
       this.blob = new Blob([file.data], {
-        type: file.mediaType
-      });
+          type: file.mediaType
+        });
       this.showPreview();
-      }).catch((error: any) => console.error(error));
+
+    }}).catch((error: any) => console.error(error));
+
+  }
+
+  Clear = () => {
+    this.title = '';
+    this.description = '';
+    this.file = null;
+    this.blob = '';
+
+    this.filters = {
+      brightness: 100,
+      contrast: 100,
+      warmth: 0,
+      saturation: 100,
+    };
   }
 
 
