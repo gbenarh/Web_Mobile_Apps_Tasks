@@ -9,7 +9,7 @@ import { LoginResponse, Pic, User } from '../../interfaces/pic';
 @Injectable()
 export class MediaProvider {
   configUrl = 'https://media.mw.metropolia.fi/wbma';
-  mediaFilePath = 'http://media.mw.metropolia.fi/wbma/uploads/';
+  mediaFilePath = 'https://media.mw.metropolia.fi/wbma/uploads/';
   picArray: Pic[];
 
   loggedIn = false;
@@ -42,6 +42,16 @@ export class MediaProvider {
       })
     };
     return this.http.post<LoginResponse>(this.configUrl + '/users', user, httpOptions);
+  }
+
+  fetchUser = (id: number) => {
+    const httpOptions = {
+      headers: new HttpHeaders({
+        'x-access-token': localStorage.getItem('token')
+      })
+    };
+
+    return this.http.get<User>(this.configUrl + `/users/${id}`, httpOptions);
   }
 
   checkIfUserExists(user: User) {

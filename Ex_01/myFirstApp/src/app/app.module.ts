@@ -15,6 +15,7 @@ import { PhotoViewer } from '@ionic-native/photo-viewer';
 import { PipesModule } from '../pipes/pipes.module';
 import { UploadPage } from '../pages/upload/upload';
 import { Chooser } from '@ionic-native/chooser';
+import { PlayerPage } from '../pages/player/player';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { Chooser } from '@ionic-native/chooser';
     ProfilePage,
     LoginRegisterPage,
     MenuPage,
-    UploadPage
+    UploadPage,
+    PlayerPage
   ],
   imports: [
     BrowserModule,
@@ -38,7 +40,8 @@ import { Chooser } from '@ionic-native/chooser';
     ProfilePage,
     LoginRegisterPage,
     MenuPage,
-    UploadPage
+    UploadPage,
+    PlayerPage
   ],
   providers: [
     StatusBar,

@@ -20,7 +20,7 @@
 <ion-content class="card-background-page">
 
   <ion-card>
-    <img [src]="mediaProvider.mediaFilePath + ('profile' | getUserTag | async| thumbnail:'large' | async)"/>
+    <img [src]="'profile' | getUserTag | async| thumbnail:'large' | async"/>
 
     <div class="card-title">{{ mediaProvider.user.username }}</div>
 

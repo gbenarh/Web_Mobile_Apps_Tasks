@@ -29,8 +29,8 @@ export class UploadPage {
   filters = {
     brightness: 100,
     contrast: 100,
-    warmth: 0,
     saturation: 100,
+    warmth: 0,
   };
 
   constructor(

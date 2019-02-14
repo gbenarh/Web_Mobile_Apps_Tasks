@@ -6,6 +6,7 @@ import { PhotoViewer } from '@ionic-native/photo-viewer';
 import { MediaProvider } from '../../providers/media/media';
 import { Observable } from 'rxjs/Observable';
 import { UploadPage } from '../upload/upload';
+import { PlayerPage } from '../player/player';
 
 @Component({
   selector: 'page-home',
@@ -55,12 +56,15 @@ export class HomePage {
 
   showImage(fileId: number) {
     // this.photoViewer.show(image);
+    /*
     this.mediaProvider.getSingleMedia(fileId).subscribe(result => {
         console.log(result);
       }, error => {
         console.log(error);
       },
     );
+    */
+   this.navCtrl.push(PlayerPage, { id: fileId });
   }
 
   upload() {

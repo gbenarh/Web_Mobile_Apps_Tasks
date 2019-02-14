@@ -5,7 +5,7 @@ export interface Pic {
   filesize: number;
   title: string;
   description: string;
-  media_type: string;
+  media_type: 'image' | 'video' | 'audio';
   mime_type: string;
   time_added: string;
   screenshot?: string;
