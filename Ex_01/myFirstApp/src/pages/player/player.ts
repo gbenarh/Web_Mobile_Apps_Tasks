@@ -3,6 +3,7 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { Pic } from '../../interfaces/pic';
 import { MediaProvider } from '../../providers/media/media';
 import { PipesModule } from '../../pipes/pipes.module';
+import { getScrollData } from 'ionic-angular/umd/components/input/input';
 
 /**
  * Generated class for the PlayerPage page.
@@ -33,6 +34,10 @@ export class PlayerPage {
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad PlayerPage');
+    this.getData();
+  }
+
+  getData() {
     this.mediaProvider
       .getSingleMedia(this.navParams.get('id'))
       .subscribe(res => {

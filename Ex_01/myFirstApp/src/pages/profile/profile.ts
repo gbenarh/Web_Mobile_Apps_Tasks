@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
 import { MediaProvider } from '../../providers/media/media';
+import { MyFilesPage } from '../my-files/my-files';
 
 /**
  * Generated class for the LogoutPage page.
@@ -29,6 +30,10 @@ export class ProfilePage {
     localStorage.clear();
     this.mediaProvider.loggedIn = false;
     this.navCtrl.parent.select(0);
+  }
+
+  myUploads() {
+    this.navCtrl.push(MyFilesPage);
   }
 
 }

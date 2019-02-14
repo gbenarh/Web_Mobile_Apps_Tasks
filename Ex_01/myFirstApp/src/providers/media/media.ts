@@ -27,6 +27,15 @@ export class MediaProvider {
     return this.http.get<Pic>(this.configUrl + '/media/' + id);
   }
 
+  getUserMedia() {
+    const httpOptions = {
+      headers: new HttpHeaders({
+        'x-access-token': localStorage.getItem('token'),
+      })
+    };
+    return this.http.get<Pic[]>(this.configUrl + '/media/user', httpOptions);
+  }
+
   login(user: User) {
     const httpOptions = {
       headers: new HttpHeaders({

@@ -15,7 +15,7 @@
 
 <ion-content padding>
   <div *ngIf="media">
-    <video *ngIf="media.media_type === 'video'" controls>
+    <video *ngIf="media.media_type === 'video'" width="320" height="240" controls>
       <source
         [src]="mediaProvider.mediaFilePath + media.filename"
         [type]="media.mime_type"
