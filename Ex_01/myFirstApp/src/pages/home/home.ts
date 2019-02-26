@@ -15,7 +15,9 @@ import { PlayerPage } from '../player/player';
 export class HomePage {
   mediaArray: Observable<Pic[]>;
 
-  constructor(public navCtrl: NavController, private photoViewer: PhotoViewer, public http: HttpClient, private mediaProvider: MediaProvider) {
+  constructor(
+    public navCtrl: NavController, private photoViewer: PhotoViewer,
+    public http: HttpClient, private mediaProvider: MediaProvider) {
 
   }
 
@@ -50,9 +52,9 @@ export class HomePage {
 */
 
   getAllFiles() {
-  this.mediaArray = this.mediaProvider.getAllMedia();
-  console.log(this.mediaArray);
-}
+    this.mediaArray = this.mediaProvider.getAllMedia();
+    console.log(this.mediaArray);
+  }
 
   showImage(fileId: number) {
     // this.photoViewer.show(image);
@@ -64,7 +66,7 @@ export class HomePage {
       },
     );
     */
-   this.navCtrl.push(PlayerPage, { id: fileId });
+    this.navCtrl.push(PlayerPage, { id: fileId });
   }
 
   upload() {

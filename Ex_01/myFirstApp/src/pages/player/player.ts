@@ -3,7 +3,6 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { Pic } from '../../interfaces/pic';
 import { MediaProvider } from '../../providers/media/media';
 import { PipesModule } from '../../pipes/pipes.module';
-import { getScrollData } from 'ionic-angular/umd/components/input/input';
 
 /**
  * Generated class for the PlayerPage page.
@@ -27,9 +26,11 @@ export class PlayerPage {
     warmth: 0,
   };
   style = '';
+  fileId: any;
 
   constructor(public mediaProvider: MediaProvider, public navCtrl: NavController,
               public navParams: NavParams, public pipesModule: PipesModule) {
+                this.fileId = this.navParams.get('id');
   }
 
   ionViewDidLoad() {
@@ -39,15 +40,23 @@ export class PlayerPage {
 
   getData() {
     this.mediaProvider
-      .getSingleMedia(this.navParams.get('id'))
+      .getSingleMedia(this.fileId)
       .subscribe(res => {
         this.media = res;
-
-        this.mediaProvider.fetchUser(res.user_id).subscribe(resp => {
-          // console.log(resp);
-          this.username = resp.username;
-        });
       });
+    this.checkLogedIn();
+  }
+
+  checkLogedIn() {
+    /*
+    if (this.mediaProvider.loggedIn) {
+      this.mediaProvider.fetchUser(this.media.user_id).subscribe(resp => {
+      // console.log(resp);
+      this.username = resp.username;
+      });
+    }
+    */
+   console.log('kierror: ', this.media.user_id);
   }
 
 }

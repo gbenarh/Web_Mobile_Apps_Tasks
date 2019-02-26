@@ -24,7 +24,7 @@
       <p>{{ image.time_added | date: ('d.M.yyyy') }}</p>
       <p>{{ image.description }}</p>
       <button (click)="viewImage(image.file_id)" ion-button clear item-end>View</button>
-      <button (click)="modifyImage(image)" ion-button clear item-end>Modify</button>
+      <button (click)="modifyImage(image.file_id)" ion-button clear item-end>Modify</button>
       <button (click)="deleteImage(image.file_id)" ion-button clear item-end>Delete</button>
     </ion-item>
   </ion-list>

@@ -34,7 +34,7 @@
     />
 
     <h2>{{ media.title }}</h2>
-    <h5>by {{ username }}</h5>
+    <h5 *ngIf="mediaProvider.loggedIn">by {{ username }}</h5>
     <p>{{ media.description | description }}</p>
   </div>
 

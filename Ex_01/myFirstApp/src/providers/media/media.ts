@@ -8,8 +8,8 @@ import { LoginResponse, Pic, User } from '../../interfaces/pic';
 */
 @Injectable()
 export class MediaProvider {
-  configUrl = 'https://media.mw.metropolia.fi/wbma';
-  mediaFilePath = 'https://media.mw.metropolia.fi/wbma/uploads/';
+  // configUrl = 'https://media.mw.metropolia.fi/wbma';
+  mediaFilePath = 'api/uploads/';
   picArray: Pic[];
 
   loggedIn = false;
@@ -20,11 +20,11 @@ export class MediaProvider {
   }
 
   getAllMedia() {
-    return this.http.get<Pic[]>(this.configUrl + '/media');
+    return this.http.get<Pic[]>('/api/media');
   }
 
   getSingleMedia(id) {
-    return this.http.get<Pic>(this.configUrl + '/media/' + id);
+    return this.http.get<Pic>('/api/media/' + id);
   }
 
   getUserMedia() {
@@ -33,7 +33,7 @@ export class MediaProvider {
         'x-access-token': localStorage.getItem('token'),
       })
     };
-    return this.http.get<Pic[]>(this.configUrl + '/media/user', httpOptions);
+    return this.http.get<Pic[]>('/api/media/user', httpOptions);
   }
 
   login(user: User) {
@@ -42,7 +42,7 @@ export class MediaProvider {
         'Content-type': 'application/json'
       })
     };
-    return this.http.post<LoginResponse>(this.configUrl + '/login', user, httpOptions);
+    return this.http.post<LoginResponse>('/api/login', user, httpOptions);
   }
   register(user: User) {
     const httpOptions = {
@@ -50,7 +50,7 @@ export class MediaProvider {
         'Content-type': 'application/json'
       })
     };
-    return this.http.post<LoginResponse>(this.configUrl + '/users', user, httpOptions);
+    return this.http.post<LoginResponse>('/api/users', user, httpOptions);
   }
 
   fetchUser = (id: number) => {
@@ -60,16 +60,16 @@ export class MediaProvider {
       })
     };
 
-    return this.http.get<User>(this.configUrl + `/users/${id}`, httpOptions);
+    return this.http.get<User>(`/api/users/${id}`, httpOptions);
   }
 
   checkIfUserExists(user: User) {
-      return this.http.get(this.configUrl + '/users/username/' + user.username);
+    return this.http.get('/api/users/username/' + user.username);
   }
 
   getFilesByTag(tag: string) {
     // single file
-    return this.http.get<Pic[]>(this.configUrl + '/tags/' + tag);
+    return this.http.get<Pic[]>('/api/tags/' + tag);
   }
 
   upload(data: any) {
@@ -78,7 +78,7 @@ export class MediaProvider {
         'x-access-token': localStorage.getItem('token'),
       })
     };
-    return this.http.post<LoginResponse>(this.configUrl + '/media', data, httpOptions);
+    return this.http.post<LoginResponse>('/api/media', data, httpOptions);
   }
 
 
